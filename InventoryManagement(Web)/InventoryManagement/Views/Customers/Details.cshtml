@@ -1,0 +1,129 @@
+﻿@model InventoryManagement.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://use.fontawesome.com/d94f445648.js"></script>
+<br /><br />
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-header">
+                <strong class="title">Customer Info</strong>
+            </div>
+            <div class="card-body">
+                <h3 class="center"><b>Customer Point:</b> @Html.DisplayFor(model => model.CustomerPoint)</h3>
+                <hr />
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <dl class="dl-horizontal left">
+                            <dt>
+                                <i class="fa fa-user"></i>
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CustomerName)
+                            </dd>
+
+                            <dt>
+                                <i class="fa fa-envelope"></i>
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CustomerEmail)
+                            </dd>
+
+                            <dt>
+                                <i class="fa fa-phone-square"></i>
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CustomerPhone)
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="col-md-6">
+                        <dl class="dl-horizontal">
+                            <dt>
+                                <i class="fa fa-id-badge"></i>
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CustomerId)
+                            </dd>
+
+                            <dt>
+                                <i class="fa fa-map-marker"></i>
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CustomerAddress)
+                            </dd>
+
+                            <dt>
+                                <i class="fa fa-calendar"></i>
+                            </dt>
+
+                            <dd>
+
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-md-4 offset-md-4 center">
+                        <p>
+                            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                            @Html.ActionLink("Back to List", "Index")
+                        </p>
+                    </div>
+                </div>
+                <br /><br />
+
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Sl</th>
+                            <th>Purchase Date</th>
+                            <th>Amount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Demo Data</td>
+                            <td>Demo Data</td>
+                            <td>View Ditels</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+<style>
+   
+    .card-header {
+        min-height: 16.428571429px;
+        padding: 15px;
+        border-bottom: 1px solid #e5e5e5;
+        background-color: #428bca;
+    }
+
+    .title {
+        color: white;
+        text-align: left !important;
+    }
+
+    .center {
+        text-align:center;
+    }
+</style>

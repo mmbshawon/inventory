@@ -1,0 +1,161 @@
+﻿@model InventoryManagement.Models.Products
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="https://use.fontawesome.com/d94f445648.js"></script>
+<style>
+    .required:after {
+        margin: 2px;
+        content: "*";
+        color: red;
+    }
+
+    .card-header {
+        min-height: 16.428571429px;
+        padding: 15px;
+        border-bottom: 1px solid #e5e5e5;
+        background-color: #428bca;
+    }
+
+    .title {
+        color: white;
+        text-align: left !important;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="title">Add New Product Stocks</h3>
+            </div>
+
+            <div class="card-body card-block">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Style Name:</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.StyleName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.StyleName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Product Size:</label>
+                        <div class="col-md-10">
+                            @Html.DropDownList("ProductSizesId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.ProductSizesId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Purches Price:</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Dpp, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Dpp, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Saling Price:</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Dsp, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Dsp, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Quantity:</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.ProductQuantity, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ProductQuantity, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Product Color:</label>
+                        <div class="col-md-10">
+                            @Html.DropDownList("CodeColorsId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CodeColorsId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Season:</label>
+                        <div class="col-md-10">
+                            @Html.DropDownList("CodeSeasonsId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CodeSeasonsId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Product Group:</label>
+                        <div class="col-md-10">
+                            @Html.DropDownList("CodeProductGroupsId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CodeProductGroupsId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Product Type:</label>
+                        <div class="col-md-10">
+                            @Html.DropDownList("CodeProductTypesId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CodeProductTypesId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Fabrics:</label>
+                        <div class="col-md-10">
+                            @Html.DropDownList("CodeFabricsId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CodeFabricsId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Fit Type:</label>
+                        <div class="col-md-10">
+                            @Html.DropDownList("CodeFitsId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CodeFitsId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Care Type:</label>
+                        <div class="col-md-10">
+                            @Html.DropDownList("CodeCaresId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CodeCaresId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="form-group">
+                        <div class="col-md-offset-10 col-md-2">
+                            <button type="submit" class="btn btn-primary">Save <span class="fa fa-floppy-o" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                </div>
+                }
+
+                <div>
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+
+                @section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                }
+            </div>
+        </div>
+    </div>
+</div>

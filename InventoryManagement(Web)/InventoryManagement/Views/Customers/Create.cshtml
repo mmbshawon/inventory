@@ -1,0 +1,127 @@
+﻿@model InventoryManagement.Models.Customer
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="https://use.fontawesome.com/d94f445648.js"></script>
+<style>
+    .required:after {
+        margin: 2px;
+        content: "*";
+        color: red;
+    }
+
+    .card-header {
+        min-height: 16.428571429px;
+        padding: 15px;
+        border-bottom: 1px solid #e5e5e5;
+        background-color: #428bca;
+    }
+
+    .title {
+        color: white;
+        text-align: left !important;
+    }
+</style>
+<br /> <br />
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="title">Add New Customer</h3>
+            </div>
+
+            <div class="card-body card-block">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <div class="col col-md-3">
+                                <label class="required form-control-label">Name:</label>
+                            </div>
+                          
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col col-md-3">
+                                <label class="required form-control-label">Customer Id:</label>
+                            </div>
+
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.CustomerId, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col col-md-3">
+                                <label class="required form-control-label">Email:</label>
+                            </div>
+                           
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.CustomerEmail, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col col-md-3">
+                                <label class="required form-control-label">Phone Number:</label>
+                            </div>
+                         
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.CustomerPhone, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.CustomerPhone, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col col-md-3">
+                                <label class="required form-control-label">Address:</label>
+                            </div>
+                           
+                            <div class="col-md-9">
+                                <textarea name="CustomerAddress" id="textarea-input" rows="4" placeholder=" " class="form-control"></textarea>
+                                @Html.ValidationMessageFor(model => model.CustomerAddress, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col col-md-3">
+                                <label class="required form-control-label">Initial Point:</label>
+                            </div>
+                           
+                            <div class="col-md-9">
+                                <input type="text" id="disabled-input" name="CustomerPoint" placeholder="Disabled" value="000" disabled="" class="form-control">
+                                @Html.ValidationMessageFor(model => model.CustomerPoint, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-10 col-md-2">
+                                <button type="submit" class="btn btn-primary"> Save <span class="fa fa-floppy-o" aria-hidden="true"> </span> </button>   
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

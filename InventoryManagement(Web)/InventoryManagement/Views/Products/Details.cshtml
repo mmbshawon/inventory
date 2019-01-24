@@ -1,0 +1,107 @@
+﻿@model InventoryManagement.Models.Products
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Products</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeCares.CaresName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeCares.CaresName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeColors.ColorsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeColors.ColorsName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeFabrics.FabricsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeFabrics.FabricsName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeFits.FitsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeFits.FitsName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeProductGroups.ProductGroupsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeProductGroups.ProductGroupsName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeProductTypes.ProductTypesName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeProductTypes.ProductTypesName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodeSeasons.SeasonsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodeSeasons.SeasonsName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductSizes.SizesName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductSizes.SizesName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StyleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StyleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dpp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dpp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dsp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dsp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

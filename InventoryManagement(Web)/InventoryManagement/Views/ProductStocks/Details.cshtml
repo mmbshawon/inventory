@@ -1,0 +1,67 @@
+﻿@model InventoryManagement.Models.ProductStock
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProductStock</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Products.StyleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Products.StyleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LSizw)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LSizw)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.XlSizw)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.XlSizw)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.XxlSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.XxlSize)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
